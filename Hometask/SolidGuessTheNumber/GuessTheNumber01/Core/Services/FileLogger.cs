@@ -1,4 +1,6 @@
-﻿
+﻿// Core/Services/FileLogger.cs
+
+
 using global::GuessTheNumber.Core.Services;
 using System;
 using System.IO;

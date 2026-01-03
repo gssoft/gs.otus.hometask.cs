@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Core/Interfaces/IInputProvider.cs
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

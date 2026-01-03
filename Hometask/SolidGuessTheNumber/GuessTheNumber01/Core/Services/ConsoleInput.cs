@@ -1,4 +1,5 @@
-﻿
+﻿// Core/Services/ConsoleInput.cs
+
 using GuessTheNumber.Core.Interfaces;
 using System;
 using System;

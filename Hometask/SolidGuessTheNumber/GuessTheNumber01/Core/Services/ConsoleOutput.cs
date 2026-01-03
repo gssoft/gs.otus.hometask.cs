@@ -1,4 +1,6 @@
-﻿
+﻿// Core/Services/ConsoleOutput.cs
+
+
 using GuessTheNumber.Core.Interfaces;
 
 namespace GuessTheNumber.Core.Services;

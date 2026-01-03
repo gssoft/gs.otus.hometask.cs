@@ -1,4 +1,4 @@
-﻿// IGameSettings.cs - только настройки
+﻿// Core/Interfaces/IGameSettings.cs - только настройки
 
 namespace GuessTheNumber.Core.Interfaces;
 

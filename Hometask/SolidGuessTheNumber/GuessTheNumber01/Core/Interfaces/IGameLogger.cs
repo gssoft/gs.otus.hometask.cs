@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Core/Interfaces/IGameLogger.cs
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

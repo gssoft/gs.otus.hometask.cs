@@ -1,4 +1,4 @@
-﻿// INumberGenerator.cs - только генерация чисел
+﻿// Core/Interfaces/INumberGenerator.cs - только генерация чисел
 
 using System;
 using System.Collections.Generic;

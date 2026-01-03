@@ -1,4 +1,4 @@
-﻿// IUserInput.cs - только ввод данных
+﻿// Core/Interfaces/IUserInput.cs - только ввод данных
 
 using System;
 using System.Collections.Generic;
