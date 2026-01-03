@@ -3,6 +3,8 @@
 // Orders.cs
 using ProtoTypeApp;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TradingPrototype
 {
@@ -44,11 +46,14 @@ namespace TradingPrototype
             Exchange = other.Exchange;
         }
 
-        // Реализация из TradingEntity (скрывает базовый метод)
-        public new abstract OrderBase MyClone();
+        // Абстрактный метод для клонирования конкретного ордера
+        public abstract OrderBase CloneOrder();
 
-        // Явная реализация IMyCloneable<OrderBase>
-        OrderBase IMyCloneable<OrderBase>.MyClone() => MyClone();
+        // Реализация MyClone из TradingEntity — ковариантно возвращает OrderBase
+        public override sealed TradingEntity MyClone() => CloneOrder();
+
+        // Типобезопасное клонирование через IMyCloneable<OrderBase>
+        OrderBase IMyCloneable<OrderBase>.MyClone() => CloneOrder();
     }
 
     public class LimitOrder : OrderBase, IMyCloneable<LimitOrder>
@@ -72,8 +77,8 @@ namespace TradingPrototype
             IsPostOnly = other.IsPostOnly;
         }
 
-        // Реализация из OrderBase
-        public override OrderBase MyClone()
+        // Реализация CloneOrder
+        public override OrderBase CloneOrder()
         {
             return new LimitOrder(this);
         }
@@ -84,8 +89,11 @@ namespace TradingPrototype
             return new LimitOrder(this);
         }
 
-        // Явная реализация IMyCloneable<LimitOrder>
-        LimitOrder IMyCloneable<LimitOrder>.MyClone() => Clone();
+        // Типобезопасное клонирование через IMyCloneable<LimitOrder>
+        public LimitOrder MyClone()
+        {
+            return new LimitOrder(this);
+        }
     }
 
     public enum TimeInForce
@@ -120,8 +128,8 @@ namespace TradingPrototype
             SlippageTolerance = other.SlippageTolerance;
         }
 
-        // Реализация из OrderBase
-        public override OrderBase MyClone()
+        // Реализация CloneOrder
+        public override OrderBase CloneOrder()
         {
             return new MarketOrder(this);
         }
@@ -132,7 +140,10 @@ namespace TradingPrototype
             return new MarketOrder(this);
         }
 
-        // Явная реализация IMyCloneable<MarketOrder>
-        MarketOrder IMyCloneable<MarketOrder>.MyClone() => Clone();
+        // Типобезопасное клонирование через IMyCloneable<MarketOrder>
+        public MarketOrder MyClone()
+        {
+            return new MarketOrder(this);
+        }
     }
 }

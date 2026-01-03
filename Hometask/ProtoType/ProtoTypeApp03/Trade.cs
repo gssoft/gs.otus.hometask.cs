@@ -37,7 +37,7 @@ namespace TradingPrototype
             Commission = other.Commission;
         }
 
-        // Реализация из TradingEntity
+        // Реализация MyClone из TradingEntity
         public override TradingEntity MyClone()
         {
             return new Trade(this);
@@ -49,7 +49,10 @@ namespace TradingPrototype
             return new Trade(this);
         }
 
-        // Явная реализация IMyCloneable<Trade>
-        Trade IMyCloneable<Trade>.MyClone() => Clone();
+        // Типобезопасное клонирование через IMyCloneable<Trade>
+        public Trade MyClone()
+        {
+            return new Trade(this);
+        }
     }
 }

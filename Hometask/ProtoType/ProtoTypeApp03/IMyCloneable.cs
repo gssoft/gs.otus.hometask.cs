@@ -1,7 +1,9 @@
 ﻿// IMyCloneable.cs
-namespace ProtoTypeApp;
 
-public interface IMyCloneable<T>
+namespace ProtoTypeApp
 {
-    T MyClone();
+    public interface IMyCloneable<T>
+    {
+        T MyClone();
+    }
 }

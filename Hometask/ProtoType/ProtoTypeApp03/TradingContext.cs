@@ -31,14 +31,24 @@ namespace TradingPrototype
 
             // Глубокое копирование коллекций
             Orders = other.Orders
-                .Select(o => o.MyClone())
+                .Select(o => o.CloneOrder())
                 .ToList();
 
             Trades = other.Trades
-                .Select(t => t.Clone())
+                .Select(t =>
+                {
+                    // Используем типобезопасный MyClone, если есть
+                    if (t is IMyCloneable<Trade> tradeCloneable)
+                        return tradeCloneable.MyClone();
+                    return new Trade(t); // запасной вариант
+                })
                 .ToList();
 
-            Strategy = other.Strategy?.MyCloneStrategy();
+            // Типобезопасное клонирование стратегии, если поддерживает IMyCloneable
+            if (other.Strategy is IMyCloneable<TradingStrategyBase> strategyCloneable)
+                Strategy = strategyCloneable.MyClone();
+            else
+                Strategy = other.Strategy;
         }
 
         public void AddOrder(OrderBase order)
@@ -51,7 +61,7 @@ namespace TradingPrototype
             Trades.Add(trade);
         }
 
-        // Реализация из TradingEntity
+        // Реализация MyClone из TradingEntity
         public override TradingEntity MyClone()
         {
             return new TradingContext(this);
@@ -63,7 +73,10 @@ namespace TradingPrototype
             return new TradingContext(this);
         }
 
-        // Явная реализация IMyCloneable<TradingContext>
-        TradingContext IMyCloneable<TradingContext>.MyClone() => Clone();
+        // Типобезопасное клонирование через IMyCloneable<TradingContext>
+        public TradingContext MyClone()
+        {
+            return new TradingContext(this);
+        }
     }
 }

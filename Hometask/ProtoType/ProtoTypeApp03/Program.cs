@@ -1,6 +1,8 @@
 ﻿// Program.cs
 // Program.cs
+// Program.cs
 using System;
+using ProtoTypeApp;
 
 namespace TradingPrototype
 {
@@ -53,8 +55,8 @@ namespace TradingPrototype
             Console.WriteLine("Original context orders count: " + context.Orders.Count);
             Console.WriteLine("Original context trades count: " + context.Trades.Count);
 
-            // Клонируем контекст
-            var clonedContext = context.Clone();
+            // Клонируем контекст (типобезопасный метод)
+            var clonedContext = context.MyClone();
 
             Console.WriteLine("Cloned context orders count: " + clonedContext.Orders.Count);
             Console.WriteLine("Cloned context trades count: " + clonedContext.Trades.Count);
@@ -82,10 +84,19 @@ namespace TradingPrototype
                               clonedContext.Orders[0].Quantity);
 
             // Демонстрация ICloneable
-            var cloneableOrder = limitOrder as ICloneable;
-            var orderCloneAsObject = cloneableOrder?.Clone();
+            var cloneableOrder = (ICloneable)limitOrder;
+            var orderCloneAsObject = cloneableOrder.Clone();
             Console.WriteLine("ICloneable order clone type: " +
                               orderCloneAsObject?.GetType().Name);
+
+            // Проверим, что ID клонированного объекта отличается от оригинала
+            Console.WriteLine("Original order ID: " + limitOrder.Id);
+            Console.WriteLine("Cloned order ID: " + ((OrderBase)orderCloneAsObject).Id);
+
+            // Демонстрация IMyCloneable<T> для LimitOrder
+            var typedCloneableOrder = (IMyCloneable<LimitOrder>)limitOrder;
+            var typedOrderClone = typedCloneableOrder.MyClone();
+            Console.WriteLine("IMyCloneable<LimitOrder> clone ID: " + typedOrderClone.Id);
 
             Console.WriteLine("=== End of demo ===");
             Console.ReadKey();

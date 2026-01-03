@@ -3,34 +3,31 @@
 // TradingEntity.cs
 using System;
 
-namespace ProtoTypeApp;
-
-public abstract class TradingEntity : ICloneable
+namespace ProtoTypeApp
 {
-    public Guid Id { get; protected set; }
-    public DateTime CreatedAt { get; protected set; }
-
-    protected TradingEntity()
+    public abstract class TradingEntity : IMyCloneable<TradingEntity>, ICloneable
     {
-        Id = Guid.NewGuid();
-        CreatedAt = DateTime.UtcNow;
-    }
+        public Guid Id { get; protected set; }
+        public DateTime CreatedAt { get; protected set; }
 
-    // Копирующий конструктор
-    protected TradingEntity(TradingEntity other)
-    {
-        if (other == null) throw new ArgumentNullException(nameof(other));
-        Id = other.Id;
-        CreatedAt = other.CreatedAt;
-    }
+        protected TradingEntity()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.UtcNow;
+        }
 
-    // Базовый метод для клонирования
-    public virtual TradingEntity MyClone()
-    {
-        throw new NotImplementedException(
-            "MyClone should be implemented in derived types.");
-    }
+        // Копирующий конструктор - сгенерирует новый ID и время создания
+        protected TradingEntity(TradingEntity other)
+        {
+            if (other == null) throw new ArgumentNullException(nameof(other));
+            Id = Guid.NewGuid();          // При клонировании создаем новый ID
+            CreatedAt = DateTime.UtcNow;  // И новое время создания
+        }
 
-    // Реализация ICloneable
-    public object Clone() => MyClone();
+        // Базовый абстрактный метод для клонирования (тип TradingEntity)
+        public abstract TradingEntity MyClone();
+
+        // Реализация ICloneable — возвращает объект как object
+        public object Clone() => MyClone();
+    }
 }

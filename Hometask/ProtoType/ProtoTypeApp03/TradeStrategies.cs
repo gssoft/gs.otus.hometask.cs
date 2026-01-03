@@ -31,18 +31,18 @@ namespace TradingPrototype
             Symbols = new List<string>(other.Symbols);
         }
 
-        // Реализация из TradingEntity
-        public override TradingEntity MyClone() => MyCloneStrategy();
-
-        // Специализированный метод для стратегий
-        public abstract TradingStrategyBase MyCloneStrategy();
-
-        // Явная реализация IMyCloneable<TradingStrategyBase>
-        TradingStrategyBase IMyCloneable<TradingStrategyBase>.MyClone() => MyCloneStrategy();
-
         public abstract void GenerateSignal(
             string symbol,
             decimal lastPrice);
+
+        // Абстрактный типобезопасный клон для базовой стратегии
+        public abstract TradingStrategyBase MyCloneTyped();
+
+        // Реализация MyClone из TradingEntity — ковариантно
+        public override sealed TradingEntity MyClone() => MyCloneTyped();
+
+        // Явная реализация IMyCloneable<TradingStrategyBase>
+        TradingStrategyBase IMyCloneable<TradingStrategyBase>.MyClone() => MyCloneTyped();
     }
 
     public class MeanReversionStrategy : TradingStrategyBase, IMyCloneable<MeanReversionStrategy>
@@ -73,8 +73,8 @@ namespace TradingPrototype
             ExitThreshold = other.ExitThreshold;
         }
 
-        // Реализация из TradingStrategyBase
-        public override TradingStrategyBase MyCloneStrategy()
+        // Реализация типобезопасного клонирования для базовой стратегии
+        public override TradingStrategyBase MyCloneTyped()
         {
             return new MeanReversionStrategy(this);
         }
@@ -85,8 +85,11 @@ namespace TradingPrototype
             return new MeanReversionStrategy(this);
         }
 
-        // Явная реализация IMyCloneable<MeanReversionStrategy>
-        MeanReversionStrategy IMyCloneable<MeanReversionStrategy>.MyClone() => Clone();
+        // Типобезопасное клонирование через IMyCloneable<MeanReversionStrategy>
+        public MeanReversionStrategy MyClone()
+        {
+            return new MeanReversionStrategy(this);
+        }
 
         public override void GenerateSignal(string symbol, decimal lastPrice)
         {
