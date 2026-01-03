@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GuessNumberGame.Core.Services;
+namespace GuessTheNumber.Core.Services;
 
 public abstract class LoggerBase : IGameLogger
 {

@@ -1,9 +1,9 @@
 ﻿
-using global::GuessNumberGame.Core.Services;
+using global::GuessTheNumber.Core.Services;
 using System;
 using System.IO;
 
-namespace GuessNumberGame.Core.Services
+namespace GuessTheNumber.Core.Services
 {
     public class FileLogger : LoggerBase
     {

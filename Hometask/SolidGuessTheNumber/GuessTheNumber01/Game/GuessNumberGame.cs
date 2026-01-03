@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using global::GuessNumberGame.Core.Models;
+using global::GuessTheNumber.Core.Models;
 
 namespace GuessTheNumber.Game;
 

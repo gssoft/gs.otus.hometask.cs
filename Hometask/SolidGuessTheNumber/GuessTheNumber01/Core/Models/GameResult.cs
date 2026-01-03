@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GuessNumberGame.Core.Models;
+namespace GuessTheNumber.Core.Models;
 public class GameResult
 {
     public bool IsWin { get; set; }

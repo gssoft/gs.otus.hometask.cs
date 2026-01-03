@@ -8,7 +8,7 @@ using System.Text;
 Классы открыты для расширения, но закрыты для модификации. 
 */
 
-namespace GuessNumberGame.Core.Services
+namespace GuessTheNumber.Core.Services
 {
     public abstract class GameSettingsBase : IGameSettings
     {
