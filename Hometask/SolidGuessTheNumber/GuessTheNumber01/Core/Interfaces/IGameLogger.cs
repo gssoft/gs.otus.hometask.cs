@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GuessTheNumber01.Core.Interfaces;
+namespace GuessTheNumber.Core.Interfaces;
 
 // IGameLogger.cs - только логирование
 public interface IGameLogger
