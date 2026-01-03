@@ -12,7 +12,8 @@ public abstract class LoggerBase : IGameLogger
 
     public virtual void LogGameStart(int targetNumber)
     {
-        Log($"Игра началась. Загадано число: {targetNumber}");
+        //  Log($"Игра началась. Загадано число: {targetNumber}");
+        Log($"Игра началась...");
     }
 
     public virtual void LogAttempt(int attempt, int guess, string hint)
