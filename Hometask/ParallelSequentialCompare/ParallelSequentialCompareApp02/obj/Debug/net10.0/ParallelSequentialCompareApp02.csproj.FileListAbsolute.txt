@@ -1,0 +1,15 @@
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\bin\Debug\net10.0\ParallelSequentialCompareApp02.exe
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\bin\Debug\net10.0\ParallelSequentialCompareApp02.deps.json
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\bin\Debug\net10.0\ParallelSequentialCompareApp02.runtimeconfig.json
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\bin\Debug\net10.0\ParallelSequentialCompareApp02.dll
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\bin\Debug\net10.0\ParallelSequentialCompareApp02.pdb
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.AssemblyInfoInputs.cache
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.AssemblyInfo.cs
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.csproj.CoreCompileInputs.cache
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.sourcelink.json
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.dll
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\refint\ParallelSequentialCompareApp02.dll
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.pdb
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ParallelSequentialCompareApp02.genruntimeconfig.cache
+F:\Projects\gs.otus.hometask.cs\Hometask\ParallelSequentialCompare\ParallelSequentialCompareApp02\obj\Debug\net10.0\ref\ParallelSequentialCompareApp02.dll

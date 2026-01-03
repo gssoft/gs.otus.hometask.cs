@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ParallelSequentialCompareApp01/ParallelSequentialCompareApp01.csproj" />
+  <Project Path="ParallelSequentialCompareApp02/ParallelSequentialCompareApp02.csproj" />
+</Solution>
