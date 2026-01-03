@@ -1,12 +1,11 @@
 ﻿using GuessTheNumber.Core.Interfaces;
-using GuessTheNumber01.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using global::GuessNumberGame.Core.Models;
 
 namespace GuessTheNumber.Game;
 
-// Основной класс игры зависит от абстракций
 public class GuessNumberGame
 {
     private readonly IGameSettings _settings;
@@ -50,7 +49,12 @@ public class GuessNumberGame
                 _logger.LogAttempt(attempt, guess, "Угадали!");
                 _output.DisplayMessage("Поздравляем! Вы угадали число!");
                 _logger.LogGameEnd(true, attempt);
-                return new GameResult { IsWin = true, AttemptsUsed = attempt };
+                return new GameResult
+                {
+                    IsWin = true,
+                    AttemptsUsed = attempt,
+                    TargetNumber = targetNumber
+                };
             }
 
             string hint = guess < targetNumber ? "больше" : "меньше";
@@ -60,6 +64,11 @@ public class GuessNumberGame
 
         _output.DisplayMessage($"Вы проиграли! Загаданное число было: {targetNumber}");
         _logger.LogGameEnd(false, _settings.MaxAttempts);
-        return new GameResult { IsWin = false, AttemptsUsed = _settings.MaxAttempts };
+        return new GameResult
+        {
+            IsWin = false,
+            AttemptsUsed = _settings.MaxAttempts,
+            TargetNumber = targetNumber
+        };
     }
 }

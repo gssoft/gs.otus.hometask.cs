@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using global::GuessNumberGame.Core.Services;
+using System;
+using System.IO;
 
-namespace GuessTheNumber.Core.Services;
-
-// Файловый логгер
-public class FileLogger : LoggerBase
+namespace GuessNumberGame.Core.Services
 {
-    private readonly string _filePath;
-
-    public FileLogger(string filePath)
+    public class FileLogger : LoggerBase
     {
-        _filePath = filePath;
-    }
+        private readonly string _filePath;
 
-    public override void Log(string message)
-    {
-        File.AppendAllText(_filePath, $"[{DateTime.Now:HH:mm:ss}] {message}{Environment.NewLine}");
+        public FileLogger(string filePath)
+        {
+            _filePath = filePath;
+        }
+
+        public override void Log(string message)
+        {
+            File.AppendAllText(_filePath, $"[{DateTime.Now:HH:mm:ss}] {message}{Environment.NewLine}");
+        }
     }
 }

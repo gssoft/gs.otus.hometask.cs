@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GuessTheNumber.Core.Services;
+using global::GuessNumberGame.Core.Services;
 
-// Консольный логгер
+namespace GuessNumberGame.Core.Services;
+
 public class ConsoleLogger : LoggerBase
 {
     public override void Log(string message)
