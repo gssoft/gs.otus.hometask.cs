@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Core/Servies/RandomNumberGenerator.cs
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

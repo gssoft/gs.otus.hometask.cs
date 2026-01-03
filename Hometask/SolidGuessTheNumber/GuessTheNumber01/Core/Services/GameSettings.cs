@@ -1,4 +1,4 @@
-﻿
+﻿// Core/Services/GameSettings.cs
 
 using GuessTheNumber.Core.Interfaces;
 using System;

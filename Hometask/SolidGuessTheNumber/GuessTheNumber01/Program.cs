@@ -1,4 +1,6 @@
-﻿using GuessTheNumber.Core.Interfaces;
+﻿// Program.cs
+
+using GuessTheNumber.Core.Interfaces;
 using GuessTheNumber.Core.Services;
 
 // using System.Security.Cryptography;
@@ -64,7 +66,7 @@ do
         Console.ResetColor();
     }
 
-    Console.WriteLine("\nХотите сыграть еще раз? (да/нет)");
+    Console.WriteLine("\nХотите сыграть еще раз? (yes/no)");
     var answer = Console.ReadLine().ToLower();
     playAgain = answer == "да" || answer == "д" || answer == "yes" || answer == "y";
 }

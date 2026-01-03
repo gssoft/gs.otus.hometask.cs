@@ -1,4 +1,6 @@
-﻿using GuessTheNumber.Core.Interfaces;
+﻿// Game/GuessNumberGame.cs
+
+using GuessTheNumber.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

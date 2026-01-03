@@ -1,4 +1,5 @@
-﻿
+﻿// Core/Services/LoggerBase.cs
+
 using GuessTheNumber.Core.Interfaces;
 using System;
 using System.Collections.Generic;
