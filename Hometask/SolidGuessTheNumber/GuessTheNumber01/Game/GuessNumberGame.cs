@@ -4,7 +4,7 @@ using GuessTheNumber.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using global::GuessTheNumber.Core.Models;
+using GuessTheNumber.Core.Models;
 
 namespace GuessTheNumber.Game;
 
