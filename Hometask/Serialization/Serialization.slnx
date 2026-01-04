@@ -1,8 +1,6 @@
 <Solution>
   <Project Path="SerializationApp01/SerializationApp01.csproj" />
-  <Project Path="SerializationApp02/SerializationApp02.csproj" />
   <Project Path="SerializationApp03/SerializationApp03.csproj" />
-  <Project Path="SerializationWithHardware03/SerializationWithHardware03.csproj" />
   <Project Path="SerializationWithHardware031/SerializationWithHardware031.csproj" />
   <Project Path="SerializationWithHardware032/SerializationWithHardware032.csproj" />
 </Solution>
