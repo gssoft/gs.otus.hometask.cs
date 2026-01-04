@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="EventsAndDelegatesAdvancedApp02/EventsAndDelegatesAdvancedApp02.csproj" />
+  <Project Path="EventsAndDelegatesApp01/EventsAndDelegatesApp01.csproj" />
+  <Project Path="EventsAndDelegatesInTradingApp03/EventsAndDelegatesInTradingApp03.csproj" />
+</Solution>
