@@ -1,0 +1,19 @@
+﻿USE VirtualShop;
+SELECT 
+    TABLE_NAME,
+    (SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS 
+     WHERE TABLE_NAME = t.TABLE_NAME) AS ColumnsCount
+FROM INFORMATION_SCHEMA.TABLES t
+WHERE TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_NAME;
+GO
+
+-- Проверка данных в таблицах
+SELECT 'Users' AS TableName, COUNT(*) AS 'RowCount' FROM Users
+UNION ALL
+SELECT 'Products', COUNT(*) FROM Products
+UNION ALL
+SELECT 'Orders', COUNT(*) FROM Orders
+UNION ALL
+SELECT 'OrderDetails', COUNT(*) FROM OrderDetails;
+GO
